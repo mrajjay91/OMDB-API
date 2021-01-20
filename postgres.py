@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 """
 Connection manager for postgresdb
 """
@@ -11,7 +11,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 class PostgresDB:
-    def _init_(self, host, port, username, password, db):
+    def __init__(self, host, port, username, password, db):
         self.host = host
         self.port = port
         self.username = username
@@ -54,4 +54,4 @@ class PostgresDB:
         :return:
         """
         engine = self.get_engine()
-        table._table_.create(bind=engine, checkfirst=True)
+        table.__table__.create(bind=engine, checkfirst=True)

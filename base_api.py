@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 """
 Generic class for API related request
 """
@@ -9,7 +9,7 @@ from requests.exceptions import HTTPError
 
 
 class BaseAPI:
-    def _init_(self, url, params):
+    def __init__(self, url, params):
         self.url = url
         self.params = params
 

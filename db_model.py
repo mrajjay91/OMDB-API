@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Integer, JSON, Sequence, VARCHAR, DATE, String
 from sqlalchemy.ext.declarative import declarative_base
@@ -12,7 +12,7 @@ class Entertainment(Base):
     """
     This is a entertainment staging table base schema
     """
-    _tablename_ = 'entertainment_staging'
+    __tablename__ = 'entertainment_staging'
 
     id = Column(Integer, Sequence('id_seq'), primary_key=True)
     title = Column(VARCHAR(150), nullable=False)
@@ -41,7 +41,7 @@ class Entertainment(Base):
     dvd = Column(VARCHAR(25))
     total_seasons = Column(VARCHAR(10))
 
-    def _repr_(self):
+    def __repr__(self):
         """
         returns a entertainment object
         :return: str: db records

@@ -124,7 +124,7 @@ def main(movie_series_name):
         logging.info(response)
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Retrieve and store information about movies/series')
     parser.add_argument('--name', type=str, help='The name of the movie/series whose information is to be '
                                                  'retrieved and stored')
