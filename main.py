@@ -8,6 +8,8 @@ from sqlalchemy import exc
 from requests.exceptions import HTTPError
 from db_model import Entertainment
 
+logging.basicConfig(level=logging.INFO)
+
 
 def get_env(key):
     """
