@@ -27,7 +27,7 @@ def get_env(key):
 
 def insert_data(sql_db, response):
     """
-    Insert data into stagin table
+    Insert data into staging table
     :param sql_db:
     :param response:
     :return:
@@ -54,9 +54,11 @@ def insert_data(sql_db, response):
                 'Information for {} does not exist in the staging table, hence adding it'.format(response['Title']))
             session.add(entertainment)
             session.commit()
-
+        else:
+            logging.info('Information already exists in the staging table for {}'.format(response['Title']))
         # close session
         session.close()
+
     except exc.SQLAlchemyError as e:
         logging.error("Failed to insert data into staging table {}".format(e))
         sys.exit(1)
